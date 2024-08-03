@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springpractise.sbrdemo.exception.StudentAlreadyExistsException;
+import com.springpractise.sbrdemo.exception.StudentNotFoundException;
 import com.springpractise.sbrdemo.model.Student;
 import com.springpractise.sbrdemo.repository.StudentRepository;
 import com.springpractise.sbrdemo.service.IStudentservice;
@@ -37,8 +38,16 @@ public class StudentServiceImpl implements IStudentservice{
     
     @Override
     public Student updateStudent(Student student, Long id) {
-        throw new UnsupportedOperationException("Unimplemented method 'updateStudent'");
+        return studentRepository.findById(id).map(st -> {
+            st.setFirstname(student.getFirstname());
+            st.setLastname(student.getLastname());
+            st.setEmail(student.getEmail());
+            st.setDepartment(student.getDepartment());
+            return studentRepository.save(st);
+        }).orElseThrow(() -> new StudentNotFoundException("Sorry!!!.. This Student Could Not Be Found..."));
     }
+
+
     
     @Override
     public Student getStudentById(Long id) {
