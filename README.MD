@@ -40,5 +40,5 @@ This is a sample project demonstrating how to perform CRUD (Create, Read, Update
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/yourproject.git
+   git clone https://github.com/Anilraj-Lokku/Spring-Practise.git
    ```
