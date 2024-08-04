@@ -7,13 +7,13 @@
 
 ## Introduction
 
-![Introduction Image](../sbr-demo/images/crud1.png)
+![Introduction Image](images/crud1.png)
 
 This is a sample project demonstrating how to perform CRUD (Create, Read, Update, Delete) operations using a full-stack approach. The backend is implemented using Spring Boot, while the frontend is built with React and styled using Bootstrap.
 
 ## Features
 
-![Features Image](../sbr-demo/images/AddStudent.png)
+![Features Image](images/AddStudent.png)
 
 - **Backend Implementation**:
   - Developed with Spring Boot.
@@ -27,7 +27,7 @@ This is a sample project demonstrating how to perform CRUD (Create, Read, Update
 
 ## Installation
 
-![Installation Image](../sbr-demo/images/EditStudent.png)
+![Installation Image](images/EditStudent.png)
 
 ### Prerequisites
 
