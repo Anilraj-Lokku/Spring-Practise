@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { FaTrashAlt, FaEdit, FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import axios from "axios";
 
 const StudentView = () => {
@@ -48,7 +51,7 @@ const StudentView = () => {
      ))}
     </tbody>
    </table> */}
-   <table class="table table-striped table-bordered table-hover">
+   <table class="table table-striped table-bordered table-hover shadow">
     <thead>
      <tr className="text-center">
       <th>ID</th>
@@ -67,10 +70,25 @@ const StudentView = () => {
        <td>{student.lastName}</td>
        <td>{student.email}</td>
        <td>{student.department}</td>
-       <td>
-        <button class="btn btn-primary btn-sm mr-2">View</button>
-        <button class="btn btn-warning btn-sm mr-2">Update</button>
-        <button class="btn btn-danger btn-sm">Delete</button>
+       <td className="mx-2">
+        <Link to={`/student-profile/${student.id}`} className="btn btn-info">
+         <FaEye />
+        </Link>
+       </td>
+
+       <td className="mx-2">
+        <Link
+         to={`/edit-student/${student.id}`}
+         className="btn btn-warning btn-sm mr-2"
+        >
+         <FaEdit />
+        </Link>
+       </td>
+
+       <td className="mx-2">
+        <button className="btn btn-danger btn-sm">
+         <FaTrashAlt />
+        </button>
        </td>
       </tr>
      ))}
