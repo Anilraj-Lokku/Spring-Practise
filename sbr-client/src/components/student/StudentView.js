@@ -19,6 +19,10 @@ const StudentView = () => {
   });
   if (result.status === 302) setStudents(result.data);
  };
+ const handleDelete = async (id) => {
+  await axios.delete(`http://localhost:8080/students/delete/${id}`);
+  loadStudents();
+ };
 
  return (
   <section>
@@ -86,7 +90,10 @@ const StudentView = () => {
        </td>
 
        <td className="mx-2">
-        <button className="btn btn-danger btn-sm">
+        <button
+         className="btn btn-danger btn-sm"
+         onClick={() => handleDelete(student.id)}
+        >
          <FaTrashAlt />
         </button>
        </td>
