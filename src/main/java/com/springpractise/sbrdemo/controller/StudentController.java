@@ -10,7 +10,7 @@ import com.springpractise.sbrdemo.model.Student;
 import com.springpractise.sbrdemo.service.IStudentservice;
 
 
-// @CrossOrigin("http://localhost:3000") //allowing client application to consume the backed
+@CrossOrigin("http://localhost:3000") //allowing client application to consume the backed
 @RestController
 @RequestMapping("/students")
 @RequiredArgsConstructor
